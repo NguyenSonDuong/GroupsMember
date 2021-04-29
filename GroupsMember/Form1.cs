@@ -59,29 +59,31 @@ namespace GroupsMember
             request.AddParameter("fb_dtsg", "AQGwGbZr7Qf2ruY:AQEG8cYMs5NaEO8");
             request.AddParameter("jazoest", "22456");
             request.AddParameter("fb_api_caller_class", "RelayModern");
-            request.AddParameter("fb_api_req_friendly_name", "useGroupsCometMemberSearchResultsRefetchQuery");
-            String vari = "{\"count\":20,\"cursor\":\"" + cursor + "\",\"groupID\":\"364997627165697\",\"query\":\"\",\"scale\":1,\"id\":\"364997627165697\"}";
+            //request.AddParameter("fb_api_req_friendly_name", "useGroupsCometMemberSearchResultsRefetchQuery");
+            //String vari = "{\"count\":20,\"cursor\":\"" + cursor + "\",\"groupID\":\"364997627165697\",\"query\":\"\",\"scale\":1,\"id\":\"364997627165697\"}";
+            String vari = "{\"count\":10,\"cursor\":\"" + cursor + "\",\"groupID\":\"302950107032767\",\"recruitingGroupFilterNonCompliant\":false,\"scale\":1,\"id\":\"302950107032767\"}";
             request.AddParameter("variables", vari);
             request.AddParameter("server_timestamps", "true");
-            request.AddParameter("doc_id", "4391041100924633");
+            request.AddParameter("doc_id", "3846285958823494");
             IRestResponse response = client.Execute(request);
             if(response != null && !String.IsNullOrEmpty(response.Content))
             {
-                FacebookAPI.model.GroupsMember groupsMember = JsonConvert.DeserializeObject<FacebookAPI.model.GroupsMember>(response.Content);
-                if(groupsMember.data.node.search_results.page_info != null && groupsMember.data.node.search_results.page_info.has_next_page)
+                //FacebookAPI.model.GroupsMember groupsMember = JsonConvert.DeserializeObject<FacebookAPI.model.GroupsMember>(response.Content);
+                MemberNew groupsMember = JsonConvert.DeserializeObject<MemberNew>(response.Content);
+                if (groupsMember.data.node.new_members.page_info != null && groupsMember.data.node.new_members.page_info.has_next_page)
                 {
-                    
-                    foreach(Edge item in groupsMember.data.node.search_results.edges)
+
+                    foreach (Edge item in groupsMember.data.node.new_members.edges)
                     {
                         dem++;
                         richTextBox1.Invoke(new MethodInvoker(() =>
                         {
-                            richTextBox1.AppendText(dem+" : "+item.node.id + " | " + item.node.name + "\n");
+                            richTextBox1.AppendText(dem + " : " + item.node.id + " | " + item.node.name + "\n");
                             richTextBox1.ScrollToCaret();
                         }));
                     }
-                    Thread.Sleep(1000);
-                    GetMember(groupsMember.data.node.search_results.page_info.end_cursor);
+                    Thread.Sleep(200);
+                    GetMember(groupsMember.data.node.new_members.page_info.end_cursor);
                 }
                 else
                 {
@@ -93,6 +95,31 @@ namespace GroupsMember
                     }));
                 }
             }
+            //    if(groupsMember.data.node.search_results.page_info != null && groupsMember.data.node.search_results.page_info.has_next_page)
+            //    {
+
+            //        foreach(Edge item in groupsMember.data.node.search_results.edges)
+            //        {
+            //            dem++;
+            //            richTextBox1.Invoke(new MethodInvoker(() =>
+            //            {
+            //                richTextBox1.AppendText(dem+" : "+item.node.id + " | " + item.node.name + "\n");
+            //                richTextBox1.ScrollToCaret();
+            //            }));
+            //        }
+            //        Thread.Sleep(1000);
+            //        GetMember(groupsMember.data.node.search_results.page_info.end_cursor);
+            //    }
+            //    else
+            //    {
+            //        richTextBox1.Invoke(new MethodInvoker(() =>
+            //        {
+            //            richTextBox1.SelectionColor = Color.Green;
+            //            richTextBox1.AppendText("Đã hết\n");
+            //            richTextBox1.ScrollToCaret();
+            //        }));
+            //    }
+            //}
             else
             {
                 richTextBox1.Invoke(new MethodInvoker(() =>
