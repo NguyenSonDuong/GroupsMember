@@ -1,0 +1,14 @@
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\bin\Debug\GroupsMember.exe.config
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\bin\Debug\GroupsMember.exe
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\bin\Debug\GroupsMember.pdb
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\bin\Debug\RestSharp.dll
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\bin\Debug\RestSharp.xml
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\obj\Debug\GroupsMember.csprojAssemblyReference.cache
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\obj\Debug\GroupsMember.Form1.resources
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\obj\Debug\GroupsMember.Properties.Resources.resources
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\obj\Debug\GroupsMember.csproj.GenerateResource.cache
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\obj\Debug\GroupsMember.csproj.CoreCompileInputs.cache
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\obj\Debug\GroupsMember.csproj.CopyComplete
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\obj\Debug\GroupsMember.exe
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\obj\Debug\GroupsMember.pdb
+C:\Users\NguyenDuong\source\repos\GroupsMember\GroupsMember\bin\Debug\Newtonsoft.Json.dll
